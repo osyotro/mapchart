@@ -456,10 +456,6 @@ var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipHTML = '<div class="c-tooltip"> <div class="c-label">{name}</div> <div class="c-tooltip__bottom"> <div class="c-span large">{value}</div> <div class="c-span unit opa">тыс.т</div> </div> </div>';
 polygonTemplate.nonScalingStroke = true;
 polygonTemplate.strokeWidth = 0.5;
-polygonSeries.calculateVisualCenter = true;
-polygonTemplate.tooltipPosition = "fixed";
-polygonSeries.tooltip.label.interactionsEnabled = true;
-polygonSeries.tooltip.keepTargetHover = true;
 polygonTemplate.fill = am4core.color("#0D73EE");
 
 // Creating dealer map
@@ -467,8 +463,11 @@ polygonTemplate.fill = am4core.color("#0D73EE");
 var imageSeries = chart.series.push(new am4maps.MapImageSeries());
 imageSeries.mapImages.template.propertyFields.longitude = "longitude";
 imageSeries.mapImages.template.propertyFields.latitude = "latitude";
-imageSeries.mapImages.template.tooltipHTML = '<div class="c-tooltip lg"><img src="https://uploads-ssl.webflow.com/613b2e44cf77f07b75342cd2/616fdb1e91a9cf6de568e413_delaval_blue.svg" loading="lazy" alt="" class="logo-sm"><div class="c-label block">{region}</div><div class="c-label black lg">{Name}</div><div class="c-tooltip__bottom vertical mg-lg"> <div class="c-label margin-bottom-125 delaval">Адрес</div><div class="c-span break-allow">{address}</div> </div><div class="c-tooltip__bottom mg-lg"><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Телефон</div><div class="c-span break-allow">{phone}</div></div><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Почта</div><div class="c-span break-allow">{e-mail}</div></div><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Сайт</div><div class="c-span break-allow">{link}</div></div></div></div>';
+imageSeries.mapImages.template.tooltipHTML = '<div class="c-tooltip lg"><img src="images/delaval_blue.svg" loading="lazy" alt="" class="logo-sm"><div class="c-label block">{region}</div><div class="c-label black lg">{Name}</div><div class="c-tooltip__bottom vertical mg-lg"> <div class="c-label margin-bottom-125 delaval">Адрес</div><div class="c-span break-allow">{address}</div> </div><div class="c-tooltip__bottom mg-lg"><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Телефон</div><div class="c-span break-allow">{phone}</div></div><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Почта</div><div class="c-span break-allow">{e-mail}</div></div><div class="c-tooltip__section"><div class="c-label margin-bottom-125 delaval">Сайт</div><div class="c-span break-allow">{link}</div></div></div></div>';
 imageSeries.mapImages.template.propertyFields.url = "url";
+imageSeries.calculateVisualCenter = true;
+imageSeries.tooltip.label.interactionsEnabled = true;
+imageSeries.tooltip.keepTargetHover = true;
 
 var circle = imageSeries.mapImages.template.createChild(am4core.Circle);
 circle.radius = 5;
@@ -590,7 +589,7 @@ imageSeries.data = [
     "region": "Республика Татарстан",
     "address": "420061, Республика Татарстан, г. Казань, ул. Новаторов, д.2В.",
     "ceo": "Ринат Шаймуллин",
-    "phone": "88 432 727 238",
+    "phone": "88 432 727 238",
     "e-mail": "tatlaval@yandex.ru",
     "link": "www.tatlaval.ru",
     "latitude": 55.803058,
