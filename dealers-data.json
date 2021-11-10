@@ -1,5 +1,4 @@
-<script>
-var dealerData = [
+[
   {
     "dealer-name": "СервисАгро",
     "all-regions": "Москва, Московская область",
@@ -780,5 +779,4 @@ var dealerData = [
     "latitude": 54.7104264,
     "longitude": 20.4522144
   }
-];
-<script>
+]
